@@ -40,6 +40,9 @@ This plugin implements the Agentic Commerce Protocol (ACP) for WooCommerce, prov
 - **Idempotency**: Redis/WP Transient support for duplicate prevention
 - **Header Validation**: Comprehensive request validation
 - **Error Handling**: Professional error logging and recovery
+- **Event Sourcing**: Complete audit trail with version history
+- **Real-time Events**: Instant webhook notifications via WordPress hooks
+- **Production Monitoring**: Built-in logging and performance tracking
 
 ## Quick Start
 
@@ -188,6 +191,89 @@ The plugin sends webhook events for order status changes:
 
 **Need Help?** [Contact Support](mailto:support@shora.co) | [Documentation](https://docs.shora.co)
 
+---
+
+## Why Choose ACP for WooCommerce?
+
+### 🚀 **AI-Ready Commerce**
+Enable your WooCommerce store to participate in the AI revolution. Let ChatGPT and AI agents discover, browse, and purchase from your store through natural language interactions.
+
+### 🛡️ **Enterprise-Grade Security**
+- **Bearer Token Authentication** - Secure API access
+- **HMAC Signature Validation** - Tamper-proof webhooks
+- **Idempotency Protection** - Prevent duplicate transactions
+- **Header Validation** - Comprehensive request security
+- **Event Sourcing** - Complete audit trail
+
+### 📊 **Real-Time Analytics**
+- **Transaction Monitoring** - Live order tracking
+- **Performance Metrics** - API response times and success rates
+- **Error Tracking** - Comprehensive logging and debugging
+- **Webhook Analytics** - Delivery success and failure rates
+
+### 🔧 **Developer Experience**
+- **Professional Admin Interface** - Easy configuration and monitoring
+- **Comprehensive Documentation** - Complete API reference
+- **Testing Tools** - Built-in connection testing
+- **Log Management** - View, download, and clear logs
+- **Cron Jobs** - Automated maintenance and cleanup
+
+### 🌐 **Production Ready**
+- **WordPress Integration** - Native WooCommerce compatibility
+- **Theme Compatibility** - Works with all modern WordPress themes
+- **Performance Optimized** - Efficient database queries and caching
+- **Scalable Architecture** - Handles high-volume transactions
+- **Error Recovery** - Automatic retry mechanisms
+
+### 💰 **Cost Effective**
+- **Free Plugin** - No licensing fees
+- **Shora API Integration** - Pay only for what you use
+- **Efficient Resource Usage** - Optimized for WordPress environment
+- **No Vendor Lock-in** - Open source MIT license
+
+## Comparison with Other ACP Implementations
+
+### 🆚 **ACP for WooCommerce vs Serverless Solutions**
+
+| Feature | ACP for WooCommerce | Serverless ACP |
+|---------|-------------------|----------------|
+| **Deployment** | WordPress Plugin | AWS Lambda + DynamoDB |
+| **Setup Time** | 5 minutes | 30+ minutes |
+| **Maintenance** | WordPress Admin | AWS Console |
+| **Cost** | Free + Shora API | AWS Infrastructure |
+| **WordPress Integration** | Native | External API |
+| **Theme Compatibility** | All WordPress Themes | N/A |
+| **Admin Interface** | Built-in | Custom Development |
+| **Logging** | WordPress Logs | CloudWatch |
+| **Updates** | WordPress Updates | Manual Deployment |
+
+### 🎯 **Why WordPress Users Choose ACP for WooCommerce**
+
+**✅ Instant Setup**
+- No AWS knowledge required
+- Familiar WordPress interface
+- One-click activation
+
+**✅ Native Integration**
+- Seamless WooCommerce integration
+- No external dependencies
+- WordPress-native security
+
+**✅ Cost Effective**
+- No infrastructure costs
+- Pay only for Shora API usage
+- No vendor lock-in
+
+**✅ Developer Friendly**
+- WordPress development standards
+- Familiar PHP codebase
+- Extensive documentation
+
+**✅ Production Ready**
+- Battle-tested WordPress platform
+- Automatic updates and security
+- Professional support
+
 ## Development
 
 ### Local Development
@@ -278,3 +364,31 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Built by [Shora](https://shora.co) - Commerce infrastructure for modern applications.
 
 **Requires Shora Account**: [Sign up at app.shora.cloud](https://app.shora.cloud) to get started.
+
+---
+
+## About
+
+Professional WordPress plugin implementing the Agentic Commerce Protocol (ACP) for WooCommerce stores. Enables AI agents to discover, browse, and purchase products through standardized API endpoints and real-time webhook notifications.
+
+**Key Features:**
+- **WordPress Integration** - Native WooCommerce integration with admin interface
+- **ACP Compliance** - Full OpenAI ACP specification implementation
+- **Security First** - Bearer token authentication, HMAC signatures, idempotency
+- **Real-time Events** - Webhook notifications for order lifecycle events
+- **Production Ready** - Comprehensive logging, error handling, and monitoring
+- **Developer Friendly** - Professional admin interface with configuration options
+
+**Perfect for:**
+- E-commerce stores wanting AI agent integration
+- Developers building AI-powered commerce solutions
+- Businesses looking to enable ChatGPT and AI agent shopping
+- WooCommerce stores seeking modern API capabilities
+
+**Resources:**
+- [Documentation](https://docs.shora.co)
+- [Shora Dashboard](https://app.shora.cloud)
+- [API Keys](https://app.shora.cloud/keys)
+- [Support](mailto:support@shora.co)
+
+**License:** MIT License - [View License](LICENSE)
