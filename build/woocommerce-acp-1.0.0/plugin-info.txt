@@ -1,0 +1,63 @@
+Plugin Name: ACP for WooCommerce
+Plugin URI: https://shora.co
+Description: Commerce infra for the AI era - Agentic Commerce Protocol integration for WooCommerce
+Version: 1.0.0
+Author: Shora
+Author URI: https://shora.co
+License: MIT
+Text Domain: woocommerce-acp
+Domain Path: /languages
+Requires at least: 5.8
+Tested up to: 6.6
+WC requires at least: 8.0
+WC tested up to: 9.0
+Requires PHP: 8.0
+Network: false
+Update URI: https://github.com/shoraco/-ACP-Agentic-Commerce-Protocol-for-Woocommerce
+
+== Description ==
+
+ACP for WooCommerce enables your WooCommerce store to participate in the Agentic Commerce Protocol (ACP), allowing AI agents and ChatGPT to discover, browse, and purchase products from your store through natural language interactions.
+
+== Installation ==
+
+1. Upload the plugin files to the /wp-content/plugins/woocommerce-acp directory, or install the plugin through the WordPress plugins screen directly.
+2. Activate the plugin through the 'Plugins' screen in WordPress.
+3. Use the ACP Setup Wizard to configure your API keys.
+4. Your store is now ready for AI agents!
+
+== Frequently Asked Questions ==
+
+= Do I need a Shora account? =
+
+Yes, you need a free Shora account to get your API keys. Sign up at https://app.shora.cloud
+
+= Is this plugin free? =
+
+Yes, the plugin is completely free. You only pay for Shora API usage.
+
+= What is the Agentic Commerce Protocol? =
+
+ACP is an open standard maintained by OpenAI and Stripe that enables AI agents to discover and purchase products from online stores.
+
+== Screenshots ==
+
+1. Setup Wizard - Easy 5-step setup process
+2. Admin Dashboard - Professional configuration interface
+3. API Testing - Built-in connection testing
+4. Analytics - Real-time transaction monitoring
+
+== Changelog ==
+
+= 1.0.0 =
+* Initial release
+* Complete ACP specification implementation
+* User-friendly setup wizard
+* Professional admin interface
+* Comprehensive testing suite
+* Production-ready features
+
+== Upgrade Notice ==
+
+= 1.0.0 =
+Initial release of ACP for WooCommerce plugin.
