@@ -1,0 +1,271 @@
+/**
+ * ACP Admin CSS
+ * Professional admin interface styling
+ */
+
+.acp-admin-tabs {
+    margin-top: 20px;
+}
+
+.acp-admin-tabs .nav-tab-wrapper {
+    border-bottom: 1px solid #ccd0d4;
+    margin-bottom: 20px;
+}
+
+.acp-admin-tabs .nav-tab {
+    background: #f1f1f1;
+    border: 1px solid #ccd0d4;
+    border-bottom: none;
+    color: #555;
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: none;
+    margin-right: 0;
+}
+
+.acp-admin-tabs .nav-tab:hover {
+    background: #fafafa;
+    color: #23282d;
+}
+
+.acp-admin-tabs .nav-tab.nav-tab-active {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+    color: #000;
+    font-weight: 600;
+}
+
+.acp-admin-tabs .tab-content {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-top: none;
+    padding: 20px;
+    margin-top: -1px;
+}
+
+.acp-admin-tabs .tab-content h3 {
+    margin-top: 0;
+    color: #23282d;
+}
+
+.acp-admin-tabs .form-table th {
+    width: 200px;
+    padding: 20px 10px 20px 0;
+    vertical-align: top;
+}
+
+.acp-admin-tabs .form-table td {
+    padding: 15px 10px;
+}
+
+.acp-admin-tabs .form-table input[type="text"],
+.acp-admin-tabs .form-table input[type="url"],
+.acp-admin-tabs .form-table input[type="password"],
+.acp-admin-tabs .form-table input[type="number"] {
+    width: 100%;
+    max-width: 400px;
+}
+
+.acp-admin-tabs .form-table .description {
+    color: #666;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.acp-admin-tabs .button {
+    margin-left: 10px;
+}
+
+.acp-admin-tabs .button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#log-content {
+    margin-top: 20px;
+}
+
+#log-content pre {
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.acp-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.acp-stats-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+}
+
+.acp-stats-card h4 {
+    margin: 0 0 10px 0;
+    color: #23282d;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.acp-stats-card .stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0073aa;
+    margin: 10px 0;
+}
+
+.acp-stats-card .stat-label {
+    color: #666;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.acp-status-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.acp-status-indicator.success {
+    background-color: #46b450;
+}
+
+.acp-status-indicator.warning {
+    background-color: #ffb900;
+}
+
+.acp-status-indicator.error {
+    background-color: #dc3232;
+}
+
+.acp-status-indicator.info {
+    background-color: #00a0d2;
+}
+
+.acp-notice {
+    padding: 12px;
+    margin: 15px 0;
+    border-left: 4px solid #00a0d2;
+    background: #f0f8ff;
+}
+
+.acp-notice.success {
+    border-left-color: #46b450;
+    background: #f0fff0;
+}
+
+.acp-notice.warning {
+    border-left-color: #ffb900;
+    background: #fffbf0;
+}
+
+.acp-notice.error {
+    border-left-color: #dc3232;
+    background: #fff0f0;
+}
+
+.acp-notice p {
+    margin: 0;
+    color: #23282d;
+}
+
+.acp-loading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #0073aa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 8px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.acp-admin-tabs .button-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.acp-admin-tabs .button-group .button {
+    margin-left: 0;
+}
+
+.acp-admin-tabs .help-text {
+    background: #f9f9f9;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.acp-admin-tabs .help-text h4 {
+    margin: 0 0 10px 0;
+    color: #23282d;
+}
+
+.acp-admin-tabs .help-text code {
+    background: #f1f1f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+.acp-admin-tabs .help-text pre {
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .acp-admin-tabs .form-table th,
+    .acp-admin-tabs .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+    
+    .acp-admin-tabs .form-table th {
+        padding-bottom: 5px;
+    }
+    
+    .acp-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .acp-admin-tabs .button-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
