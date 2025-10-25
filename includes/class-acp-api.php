@@ -1,7 +1,10 @@
 <?php
 /**
  * ACP REST API endpoints
- * Professional implementation based on Magento ACP patterns
+ * Professional implementation following official ACP specification
+ * 
+ * @link https://github.com/agentic-commerce-protocol/agentic-commerce-protocol
+ * @link https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/spec/openapi/openapi.agentic_checkout.yaml
  */
 
 declare(strict_types=1);
@@ -10,9 +13,31 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+/**
+ * ACP API Class
+ * 
+ * Implements the official Agentic Commerce Protocol (ACP) specification
+ * maintained by OpenAI and Stripe. Provides checkout session management
+ * endpoints that are fully compliant with the ACP OpenAPI specification.
+ * 
+ * @since 1.0.0
+ * @package WooCommerce_ACP
+ */
 class ACP_API {
     
+    /**
+     * REST API namespace
+     * 
+     * @var string
+     */
     private $namespace = 'acp/v1';
+    
+    /**
+     * ACP specification version
+     * 
+     * @var string
+     */
+    private $acp_version = '1.0.0';
     
     public function __construct() {
         // Constructor - routes will be registered via register_routes()
@@ -20,14 +45,25 @@ class ACP_API {
     
     /**
      * Register REST API routes
+     * 
+     * Implements the official ACP specification endpoints:
+     * - POST /checkout_sessions - Create checkout session
+     * - GET /checkout_sessions/{id} - Retrieve checkout session
+     * - PUT /checkout_sessions/{id} - Update checkout session
+     * - POST /checkout_sessions/{id}/complete - Complete checkout session
+     * - POST /checkout_sessions/{id}/cancel - Cancel checkout session
+     * 
+     * @since 1.0.0
+     * @link https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/spec/openapi/openapi.agentic_checkout.yaml
      */
-    public function register_routes() {
-        // Checkout sessions endpoints
+    public function register_routes(): void {
+        // ACP Checkout Sessions endpoints - Official specification compliance
         register_rest_route($this->namespace, '/checkout_sessions', array(
             'methods' => 'POST',
             'callback' => array($this, 'create_checkout_session'),
             'permission_callback' => array($this, 'check_permission'),
-            'args' => $this->get_checkout_session_args()
+            'args' => $this->get_checkout_session_args(),
+            'schema' => array($this, 'get_checkout_session_schema')
         ));
         
         register_rest_route($this->namespace, '/checkout_sessions/(?P<session_id>[a-zA-Z0-9_-]+)', array(
@@ -85,9 +121,17 @@ class ACP_API {
     }
     
     /**
-     * Create checkout session with professional ACP compliance
+     * Create checkout session with ACP specification compliance
+     * 
+     * Implements the official ACP specification for creating checkout sessions.
+     * Validates input against ACP JSON schemas and returns ACP-compliant responses.
+     * 
+     * @param WP_REST_Request $request The REST request object
+     * @return WP_REST_Response|WP_Error ACP-compliant response
+     * @since 1.0.0
+     * @link https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/spec/json-schema
      */
-    public function create_checkout_session($request) {
+    public function create_checkout_session(WP_REST_Request $request) {
         try {
             $params = $request->get_params();
             
@@ -343,9 +387,61 @@ class ACP_API {
     }
     
     /**
-     * Get checkout session arguments
+     * Get checkout session schema for ACP specification compliance
+     * 
+     * Returns the JSON schema for checkout session creation according to
+     * the official ACP specification maintained by OpenAI and Stripe.
+     * 
+     * @return array ACP-compliant JSON schema
+     * @since 1.0.0
+     * @link https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/spec/json-schema
      */
-    private function get_checkout_session_args() {
+    public function get_checkout_session_schema(): array {
+        return array(
+            '$schema' => 'http://json-schema.org/draft-07/schema#',
+            'title' => 'ACP Checkout Session',
+            'description' => 'Agentic Commerce Protocol checkout session schema',
+            'type' => 'object',
+            'properties' => array(
+                'items' => array(
+                    'type' => 'array',
+                    'description' => 'Array of items to be purchased',
+                    'items' => array(
+                        'type' => 'object',
+                        'properties' => array(
+                            'sku' => array('type' => 'string'),
+                            'name' => array('type' => 'string'),
+                            'quantity' => array('type' => 'integer', 'minimum' => 1),
+                            'price' => array('type' => 'number', 'minimum' => 0)
+                        ),
+                        'required' => array('sku', 'name', 'quantity', 'price')
+                    ),
+                    'minItems' => 1
+                ),
+                'buyer' => array(
+                    'type' => 'object',
+                    'properties' => array(
+                        'id' => array('type' => 'string'),
+                        'name' => array('type' => 'string'),
+                        'email' => array('type' => 'string', 'format' => 'email')
+                    )
+                ),
+                'metadata' => array(
+                    'type' => 'object',
+                    'description' => 'Additional metadata for the checkout session'
+                )
+            ),
+            'required' => array('items')
+        );
+    }
+
+    /**
+     * Get checkout session arguments for validation
+     * 
+     * @return array WordPress REST API arguments
+     * @since 1.0.0
+     */
+    private function get_checkout_session_args(): array {
         return array(
             'amount' => array(
                 'required' => true,

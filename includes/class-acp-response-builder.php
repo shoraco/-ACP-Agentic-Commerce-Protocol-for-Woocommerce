@@ -1,7 +1,10 @@
 <?php
 /**
- * ACP Response Builder - Professional response formatting
- * Based on Magento ACP implementation patterns
+ * ACP Response Builder
+ * Professional response formatting following official ACP specification
+ * 
+ * @link https://github.com/agentic-commerce-protocol/agentic-commerce-protocol
+ * @link https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/spec/json-schema
  */
 
 declare(strict_types=1);
@@ -10,6 +13,16 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+/**
+ * ACP Response Builder Class
+ * 
+ * Implements the official ACP specification for response formatting.
+ * Ensures all responses are compliant with ACP JSON schemas and
+ * follow the official ACP specification maintained by OpenAI and Stripe.
+ * 
+ * @since 1.0.0
+ * @package WooCommerce_ACP
+ */
 class ACP_Response_Builder {
     
     /**

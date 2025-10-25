@@ -1,7 +1,10 @@
 <?php
 /**
  * ACP Authentication and Security
- * Professional implementation based on Magento ACP patterns
+ * Professional implementation following official ACP specification
+ * 
+ * @link https://github.com/agentic-commerce-protocol/agentic-commerce-protocol
+ * @link https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/spec/openapi/openapi.agentic_checkout.yaml
  */
 
 declare(strict_types=1);
@@ -10,6 +13,16 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+/**
+ * ACP Authentication Class
+ * 
+ * Implements the official ACP specification for authentication and security.
+ * Provides Bearer token authentication, HMAC signature validation, and
+ * idempotency protection as specified in the ACP specification.
+ * 
+ * @since 1.0.0
+ * @package WooCommerce_ACP
+ */
 class ACP_Auth {
     
     /**
