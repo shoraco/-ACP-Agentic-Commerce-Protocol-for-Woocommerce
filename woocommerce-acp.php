@@ -111,6 +111,7 @@ class WooCommerce_ACP {
         require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-cron.php';
         require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-admin.php';
         require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-admin-ajax.php';
+        require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-setup-wizard.php';
         require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-test.php';
     }
     
@@ -130,6 +131,7 @@ class WooCommerce_ACP {
         new ACP_Cron();
         new ACP_Admin();
         new ACP_Admin_Ajax();
+        new ACP_Setup_Wizard();
         new ACP_Test();
     }
     

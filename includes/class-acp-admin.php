@@ -22,6 +22,17 @@ class ACP_Admin {
      * Add admin menu
      */
     public function add_admin_menu(): void {
+        // Add setup wizard as primary menu
+        add_submenu_page(
+            'woocommerce',
+            'ACP Setup Wizard',
+            '🚀 ACP Setup',
+            'manage_woocommerce',
+            'acp-setup-wizard',
+            array($this, 'setup_wizard_redirect')
+        );
+        
+        // Add settings as secondary menu
         add_submenu_page(
             'woocommerce',
             'ACP Settings',
@@ -30,6 +41,31 @@ class ACP_Admin {
             'acp-settings',
             array($this, 'admin_page')
         );
+    }
+    
+    /**
+     * Redirect to setup wizard if not configured
+     */
+    public function setup_wizard_redirect(): void {
+        $api_key = get_option('acp_api_key');
+        $webhook_secret = get_option('acp_webhook_secret');
+        
+        if (empty($api_key) || empty($webhook_secret)) {
+            // Redirect to setup wizard
+            wp_redirect(admin_url('admin.php?page=acp-setup-wizard'));
+            exit;
+        } else {
+            // Show setup wizard page
+            $this->setup_wizard_page();
+        }
+    }
+    
+    /**
+     * Setup wizard page
+     */
+    public function setup_wizard_page(): void {
+        $setup_wizard = new ACP_Setup_Wizard();
+        $setup_wizard->setup_wizard_page();
     }
     
     /**
