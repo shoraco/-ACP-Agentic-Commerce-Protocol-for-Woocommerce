@@ -17,7 +17,9 @@
 
 ## Overview
 
-This plugin implements the Agentic Commerce Protocol (ACP) for WooCommerce, providing standardized API endpoints that enable AI agents to discover, browse, and purchase products from your store. The implementation follows OpenAI's ACP specification and includes comprehensive security features, webhook support, and product feed generation.
+This plugin implements the **Agentic Commerce Protocol (ACP)** for WooCommerce, providing standardized API endpoints that enable AI agents to discover, browse, and purchase products from your store. The implementation follows the official ACP specification maintained by **OpenAI** and **Stripe**.
+
+**ACP Compliance**: This plugin implements the official [Agentic Commerce Protocol specification](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol) with full OpenAPI compliance and JSON Schema validation.
 
 **Requires Shora Account**: To use this plugin, you need a Shora account and API keys from [app.shora.cloud](https://app.shora.cloud).
 
@@ -101,21 +103,30 @@ This plugin implements the Agentic Commerce Protocol (ACP) for WooCommerce, prov
 
 ## API Endpoints
 
-### Checkout Sessions
+### ACP-Compliant Checkout Sessions
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/wp-json/acp/v1/checkout_sessions` | Create checkout session |
-| `GET` | `/wp-json/acp/v1/checkout_sessions/{id}` | Get session details |
-| `PUT` | `/wp-json/acp/v1/checkout_sessions/{id}` | Update session |
-| `POST` | `/wp-json/acp/v1/checkout_sessions/{id}/complete` | Complete payment |
-| `POST` | `/wp-json/acp/v1/checkout_sessions/{id}/cancel` | Cancel session |
+This plugin implements the official [ACP Checkout API specification](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/spec/openapi/openapi.agentic_checkout.yaml):
+
+| Method | Endpoint | Description | ACP Spec |
+|--------|----------|-------------|----------|
+| `POST` | `/wp-json/acp/v1/checkout_sessions` | Create checkout session | ✅ Compliant |
+| `GET` | `/wp-json/acp/v1/checkout_sessions/{id}` | Get session details | ✅ Compliant |
+| `PUT` | `/wp-json/acp/v1/checkout_sessions/{id}` | Update session | ✅ Compliant |
+| `POST` | `/wp-json/acp/v1/checkout_sessions/{id}/complete` | Complete payment | ✅ Compliant |
+| `POST` | `/wp-json/acp/v1/checkout_sessions/{id}/cancel` | Cancel session | ✅ Compliant |
 
 ### Product Feed
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/acp/feed` | Get product catalog (JSON) |
+| Method | Endpoint | Description | ACP Spec |
+|--------|----------|-------------|----------|
+| `GET` | `/acp/feed` | Get product catalog (JSON) | ✅ Compliant |
+
+### ACP Specification Compliance
+
+- **OpenAPI 3.0**: Full compliance with [ACP OpenAPI spec](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/spec/openapi/openapi.agentic_checkout.yaml)
+- **JSON Schema**: Validates against [ACP JSON schemas](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/spec/json-schema)
+- **RFC Compliance**: Follows [ACP RFC specifications](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/rfcs)
+- **Examples**: Compatible with [ACP examples](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/examples)
 
 ## Configuration
 
@@ -369,11 +380,17 @@ Built by [Shora](https://shora.co) - Commerce infrastructure for modern applicat
 
 ## About
 
-Professional WordPress plugin implementing the Agentic Commerce Protocol (ACP) for WooCommerce stores. Enables AI agents to discover, browse, and purchase products through standardized API endpoints and real-time webhook notifications.
+Professional WordPress plugin implementing the **Agentic Commerce Protocol (ACP)** for WooCommerce stores. This plugin provides a complete implementation of the official ACP specification maintained by **OpenAI** and **Stripe**.
+
+**ACP Specification Compliance:**
+- **Official ACP Implementation** - Full compliance with [agentic-commerce-protocol/agentic-commerce-protocol](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol)
+- **OpenAPI 3.0** - Implements [ACP OpenAPI specification](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/spec/openapi/openapi.agentic_checkout.yaml)
+- **JSON Schema** - Validates against [ACP JSON schemas](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/spec/json-schema)
+- **RFC Compliance** - Follows [ACP RFC specifications](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol/blob/main/rfcs)
 
 **Key Features:**
 - **WordPress Integration** - Native WooCommerce integration with admin interface
-- **ACP Compliance** - Full OpenAI ACP specification implementation
+- **ACP Compliance** - Full OpenAI and Stripe ACP specification implementation
 - **Security First** - Bearer token authentication, HMAC signatures, idempotency
 - **Real-time Events** - Webhook notifications for order lifecycle events
 - **Production Ready** - Comprehensive logging, error handling, and monitoring
@@ -386,6 +403,7 @@ Professional WordPress plugin implementing the Agentic Commerce Protocol (ACP) f
 - WooCommerce stores seeking modern API capabilities
 
 **Resources:**
+- [ACP Specification](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol)
 - [Documentation](https://docs.shora.co)
 - [Shora Dashboard](https://app.shora.cloud)
 - [API Keys](https://app.shora.cloud/keys)
