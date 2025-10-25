@@ -1,15 +1,25 @@
 # ACP for WooCommerce
 
-Agentic Commerce Protocol integration for WooCommerce stores. Enable AI-powered commerce through standardized API endpoints and product feeds.
+<div align="center">
+
+**Agentic Commerce Protocol integration for WooCommerce stores**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![WooCommerce](https://img.shields.io/badge/WooCommerce-8.0%2B-blue.svg)](https://woocommerce.com/)
 [![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-blue.svg)](https://wordpress.org/)
 [![PHP](https://img.shields.io/badge/PHP-8.0%2B-purple.svg)](https://php.net/)
 
+**Enable AI-powered commerce through standardized API endpoints and product feeds**
+
+[Documentation](https://docs.shora.co) • [Shora Dashboard](https://app.shora.cloud) • [API Keys](https://app.shora.cloud/keys) • [Support](mailto:support@shora.co)
+
+</div>
+
 ## Overview
 
 This plugin implements the Agentic Commerce Protocol (ACP) for WooCommerce, providing standardized API endpoints that enable AI agents to discover, browse, and purchase products from your store. The implementation follows OpenAI's ACP specification and includes comprehensive security features, webhook support, and product feed generation.
+
+**Requires Shora Account**: To use this plugin, you need a Shora account and API keys from [app.shora.cloud](https://app.shora.cloud).
 
 ## Features
 
@@ -38,40 +48,41 @@ This plugin implements the Agentic Commerce Protocol (ACP) for WooCommerce, prov
 - WooCommerce 8.0 or higher  
 - PHP 8.0 or higher
 - MySQL 5.7 or higher
+- **Shora Account** (required) - [Sign up at app.shora.cloud](https://app.shora.cloud)
 
 ### Installation
 
-1. **Download the plugin**
-   ```bash
-   git clone https://github.com/shora-co/woocommerce-acp-integration.git
-   ```
+1. **Get Shora API Keys**
+   - Sign up at [app.shora.cloud](https://app.shora.cloud)
+   - Navigate to [API Keys](https://app.shora.cloud/keys)
+   - Generate your API key and webhook secret
 
-2. **Install in WordPress**
-   - Upload the plugin folder to `/wp-content/plugins/`
-   - Activate the plugin in WordPress admin
+2. **Install the Plugin**
+   ```bash
+   git clone https://github.com/shoraco/-ACP-Agentic-Commerce-Protocol-for-Woocommerce.git
+   ```
+   - Upload to `/wp-content/plugins/`
+   - Activate in WordPress admin
    - Ensure WooCommerce is installed and active
 
-3. **Configure API Keys**
+3. **Configure Plugin**
    - Go to WooCommerce → Settings → ACP
-   - Generate API key and webhook secret
-   - Configure webhook URL (optional)
+   - Enter your Shora API key from [app.shora.cloud/keys](https://app.shora.cloud/keys)
+   - Configure webhook settings
+   - Test the connection
 
 ### Test the Integration
 
 1. **Create a checkout session**
    ```bash
    curl -X POST https://yourstore.com/wp-json/acp/v1/checkout_sessions \
-     -H "Authorization: Bearer YOUR_API_KEY" \
+     -H "Authorization: Bearer YOUR_SHORA_API_KEY" \
      -H "Content-Type: application/json" \
      -H "Idempotency-Key: test-123" \
      -d '{
-       "amount": 100.00,
-       "currency": "TRY",
-       "buyer": {
-         "id": "buyer_123",
-         "name": "Test User",
-         "email": "test@example.com"
-       }
+       "items": [
+         {"sku": "product-123", "quantity": 1}
+       ]
      }'
    ```
 
@@ -82,7 +93,8 @@ This plugin implements the Agentic Commerce Protocol (ACP) for WooCommerce, prov
 
 3. **Check webhook events**
    - Place a test order in WooCommerce
-   - Verify webhook events are sent to configured URL
+   - Verify webhook events are sent to Shora dashboard
+   - Monitor events at [app.shora.cloud/webhooks](https://app.shora.cloud/webhooks)
 
 ## API Endpoints
 
@@ -154,20 +166,27 @@ The plugin sends webhook events for order status changes:
 }
 ```
 
-## Advanced Features
+## Shora Dashboard Integration
 
-### Shora API Integration
+### Account Management
+- **API Keys**: Manage your API keys at [app.shora.cloud/keys](https://app.shora.cloud/keys)
+- **Webhooks**: Configure webhook endpoints at [app.shora.cloud/webhooks](https://app.shora.cloud/webhooks)
+- **Analytics**: View transaction insights and reports
+- **Settings**: Configure your store settings and preferences
 
-For production environments and advanced functionality:
-
+### Advanced Features
 - **Payment Processing**: Multi-provider payment gateway integration
-- **Analytics**: Comprehensive transaction insights and reporting
+- **Real-time Monitoring**: Live transaction monitoring and alerts
 - **Enterprise Support**: Priority support and SLA
 - **Custom Integrations**: Tailored solutions for specific requirements
 
-**Professional Services Available**
+### Getting Started with Shora
+1. **Sign up** at [app.shora.cloud](https://app.shora.cloud)
+2. **Generate API keys** from your dashboard
+3. **Configure webhooks** for real-time events
+4. **Monitor transactions** and analytics
 
-[Contact Sales](https://shora.co/contact) | [Documentation](https://docs.shora.co)
+**Need Help?** [Contact Support](mailto:support@shora.co) | [Documentation](https://docs.shora.co)
 
 ## Development
 
@@ -247,6 +266,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 - **Documentation**: [docs.shora.co](https://docs.shora.co)
+- **Dashboard**: [app.shora.cloud](https://app.shora.cloud)
+- **API Keys**: [app.shora.cloud/keys](https://app.shora.cloud/keys)
 - **Issues**: [GitHub Issues](https://github.com/shoraco/-ACP-Agentic-Commerce-Protocol-for-Woocommerce/issues)
 - **Contact**: [support@shora.co](mailto:support@shora.co)
 
@@ -255,3 +276,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **ACP for WooCommerce** - Professional implementation of the Agentic Commerce Protocol for WooCommerce stores.
 
 Built by [Shora](https://shora.co) - Commerce infrastructure for modern applications.
+
+**Requires Shora Account**: [Sign up at app.shora.cloud](https://app.shora.cloud) to get started.
