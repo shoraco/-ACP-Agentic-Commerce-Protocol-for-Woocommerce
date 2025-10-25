@@ -107,10 +107,11 @@ class WooCommerce_ACP {
         require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-feed-generator.php';
         require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-webhook.php';
         require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-model.php';
+        require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-database.php';
         require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-cron.php';
         require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-admin.php';
         require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-admin-ajax.php';
-        require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/test.php';
+        require_once WOOCOMMERCE_ACP_PLUGIN_DIR . 'includes/class-acp-test.php';
     }
     
     /**
@@ -121,6 +122,7 @@ class WooCommerce_ACP {
         load_plugin_textdomain('woocommerce-acp', false, dirname(plugin_basename(__FILE__)) . '/languages');
         
         // Initialize components
+        new ACP_Database();
         new ACP_API();
         new ACP_Auth();
         new ACP_Feed_Generator();
@@ -128,6 +130,7 @@ class WooCommerce_ACP {
         new ACP_Cron();
         new ACP_Admin();
         new ACP_Admin_Ajax();
+        new ACP_Test();
     }
     
     /**
